@@ -17,8 +17,9 @@ graph = None
 
 st.set_page_config(
         layout="wide",
-        page_title="GraphRAG-app-dev",
-        page_icon=":graph:"
+        page_title="GraphRAG Studio",
+        page_icon="🔗",
+        initial_sidebar_state="expanded"
     )
 
 st.title("Knowledge-Graph RAG")
