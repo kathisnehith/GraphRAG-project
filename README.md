@@ -48,6 +48,13 @@ GraphRAG/
     ├── visualizer.py          # Graph visualization utilities
     └── retriver_visualizer.py # Retrieval visualization
 ```
+
+## 📊 GraphRAG Workflow Visualization
+
+<div align="center">
+  <img src="pdf_gragh_generation.svg" alt="GraphRAG Workflow" width="800" style="max-width: 100%; height: auto;">
+</div>
+
 ## 🚀 Quick Start
 
 ### Using GraphRAG Studio (Recommended)
