@@ -1,0 +1,13 @@
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-experimental
+langchain-anthropic
+langchain-openai
+langchain-neo4j
+neo4j
+pypdf
+pyvis
+python-dotenv
+pandas
