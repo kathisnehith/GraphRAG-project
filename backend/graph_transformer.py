@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+import pandas as pd
 from langchain.document_loaders import PyPDFLoader
 from langchain_core.documents import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -38,9 +39,10 @@ graph_transformer = LLMGraphTransformer(
 print(f"✓ Claude LLM initialized with max_tokens=8192")
 print(f"✓ Graph transformer created")
 
-# File uploader
+# PDF File uploader
+
 uploaded_file = r'/Users/kathisnehith/Downloads/prompt_engineer_sample_book.pdf'
-        # Load and split the PDF
+# Load and split the PDF
 loader = PyPDFLoader(uploaded_file)
 pages = loader.load_and_split()
 
@@ -62,6 +64,22 @@ for i, doc in enumerate(docs):
     print(f"Chunk {i+1}/{len(docs)} processed - Page {page_number}")
     print(f"Content: {lc_docs[-1].page_content[:100]}...")
     print("-" * 50)
+
+# CSV (structured) File uploader
+csv_file = r"/Users/kathisnehith/Downloads/healthcare_dataset.csv"
+df = pd.read_csv(csv_file)
+df = df.head(100)
+
+for idx, row in df.iterrows():
+    # Convert each row to a readable string
+    row_str = ", ".join([f"{col}: {val}" for col, val in row.items()])
+
+    # Create LangChain Document with metadata
+    lc_docs.append(Document(
+        page_content=row_str,
+        metadata={'row': idx, 'source': csv_file}
+    ))
+
 
 # Convert to graph documents
 graph_documents_lc = graph_transformer.convert_to_graph_documents(lc_docs)
