@@ -52,7 +52,7 @@ GraphRAG/
 ## 📊 GraphRAG Workflow Visualization
 
 <div align="center">
-  <img src="pdf_gragh_generation.svg" alt="GraphRAG Workflow" width="800" style="max-width: 100%; height: auto;">
+  <img src="pdf_graph_generation.svg" alt="GraphRAG Workflow" width="800" style="max-width: 100%; height: auto;">
 </div>
 
 ## 🚀 Quick Start
